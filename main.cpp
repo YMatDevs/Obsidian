@@ -1,52 +1,41 @@
-#include <optional>
 #include <SFML/Window.hpp>
-#include <SFML/Graphics.hpp>
 
 
 #include <iostream>
 #include <string>
 
 
-#include "Sprites/Player/PlayerRocket.h"
+#include "CoreFunctions/CoreFunctions.h"
+#include "Screens/Screen.h"
+
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode(800, 600), "Obsidian");
+    // Creating Window
+    sf::RenderWindow window;
+    initWindow(window);
 
-    window.setFramerateLimit(60);
+    // Creating a Screen Pointer
+    Screen* screen = new MainMenuScreen(windowSize);
 
-    PlayerRocket playerRocket("Fighter");
-
+    // Creating a Clock
     sf::Clock clock;
     clock.restart();
 
-    while (window.isOpen())
-    {
-        sf::Event event;
+    // Main Application Loop
+    while (window.isOpen()) {
 
+        // Handle Events
+        sf::Event event{};
         while (window.pollEvent(event)) { if (event.type == sf::Event::Closed) { window.close(); } }
 
-        float deltaTime = clock.restart().asSeconds();
-
-        float x = 0.0f;
-        float y = 0.0f;
-
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) y -= deltaTime;
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) y += deltaTime;
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)) x -= deltaTime;
-        if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) x += deltaTime;
-
-        playerRocket.move(0, y);
-        playerRocket.rotate(x);
-
-
-
-
-        window.clear(sf::Color::Black);
-
-        window.draw(playerRocket.sprite);
+        float dt = clock.restart().asSeconds();
+        screen->update(dt, windowSize, screen);  // <-- New version
+        screen->render(window, screen);
 
         window.display();
     }
+
+    delete screen; // Don't forget to free memory allocated with new
     return 0;
 }
