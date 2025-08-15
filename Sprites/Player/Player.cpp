@@ -3,11 +3,9 @@
 //
 
 #include "Player.h"
-#include <complex>
 
 
-
-Player::Player(const std::string choice) : Spaceship(5000, sf::Vector2f (4096.0f, 4096.0f), choice)
+Player::Player(const std::string choice) : Spaceship(5000, /*sf::Vector2f (4096.0f, 4096.0f)*/ sf::Vector2f(100, 100), choice)
 {
     this->maxHealth = 100.0f;
     this->currentHealth = 100.0f;

@@ -6,14 +6,12 @@
 #define SPACESHIP_H
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Graphics/Texture.hpp>
-
+#include <cstdint>
+#include "../../CoreFunctions/CoreFunctions.h"
 
  // -------- MACROS -----------//
 #define TURN_LEFT 0
 #define TURN_RIGHT 1
-#define ROTATION_SPEED 200
-#define ACCELERATION 500
-#define DRAG 0.1f
 
 #define BOMBER "Bomber"
 #define CORVETTE "Corvette"

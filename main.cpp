@@ -3,7 +3,8 @@
 
 #include <iostream>
 #include <string>
-
+#include <cstdlib>
+#include <ctime>
 
 #include "CoreFunctions/CoreFunctions.h"
 #include "Screens/Screen.h"
@@ -11,6 +12,8 @@
 
 int main()
 {
+    std::srand(static_cast<unsigned>(std::time(nullptr)));
+
     // Creating Window
     sf::RenderWindow window;
     initWindow(window);
