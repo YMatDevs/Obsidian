@@ -11,19 +11,19 @@ Here's a look at the game in action.
 
 *(Tip: You can use a free tool like [ScreenToGif](https://www.screentogif.com/) to record a short GIF of your gameplay and drag-and-drop it here.)*
 
-![Gameplay GIF or Screenshot](<./path/to/your/gameplay.gif>)
+[![Gameplay Video](<./path/to/your_screenshot.png>)](https://youtu.be/_8Z73Pd8rHM)
 
 ### Screenshots
 
 | Main Menu / Start Screen | In-Game Action |
 | :---: | :---: |
-| ![Main Menu Screenshot](<./path/to/your/menu_screenshot.png>) | ![Gameplay Screenshot](<./path/to/your/action_screenshot.png>) |
+| ![Main Menu Screenshot](<img width="1920" height="1080" alt="Screenshot (40)" src="https://github.com/user-attachments/assets/36808648-3fe0-4a4b-8f56-36ef12e120f1" />) | ![Gameplay Screenshot](<img width="1920" height="1080" alt="Screenshot (39)" src="https://github.com/user-attachments/assets/b044a672-7aa1-438f-bbb7-ae6f5f5cbf96" />) |
 
 ---
 
 ## Tech Stack
 
-* **Language:** C++ (e.g., C++17)
+* **Language:** C++ 
 * **Library:** [SFML](https://www.sfml-dev.org/) (Simple and Fast Multimedia Library) for graphics, windowing, and input.
 * **Build System:** CMake, CLion
 
